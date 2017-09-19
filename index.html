@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <title>Fuel or Full</title>
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+   <script src="main.js"></script>
+
+
+
+  <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+
+
+<body background="https://wallpaperlayer.com/img/2015/1/blurred-colors-7593-7887-hd-wallpapers.jpg" height="100%" width="100%">
+<style>
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+</style>
+
+  <a class="navbar-brand" href="index.html"></a>
+  <nav color="green">
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s1">
+        <a href="index.html" class="brand-logo"><img src="https://cdn.pixabay.com/photo/2014/04/03/10/54/fuel-meter-311685_960_720.png" height="50px" width="50px"/></a></div>
+<div class="col s11" id="lol">
+Fuel Price Checker
+
+
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="http://www.iamsid.cf" target="_blank">About</a></li>
+          <li><a href="index.html">Contact</a></li>
+
+        </ul>
+      </div>
+    </div>
+      </div>
+    </nav>
+
+
+<br>
+
+
+
+<div class="container">
+<div class="card hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="http://www.automotive-fleet.com/fc_images/articles/M-gaspump-money-1.jpg" height="500px">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Fuel Or Full ? Click me to find out more.<i class="material-icons right">more_vert</i></span>
+      <p>Check me out at <a href="https://www.linkedin.com/in/shubhamdhingraa">LinkedIn</a>.</p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><h3 style="color:green">Fuel Price Checker</h3><i class="material-icons right">close</i></span>
+      <p><h4>This app is integrated with Indian Oil and is showing the fuel rates in real time. It gives the fuel rate in major cities. The user just needs to select the city and fuel type.
+      i.e City: Noida, Fuel Type: Petrol</h4></p>
+    </div>
+
+
+       <div class="row">
+         <div class="col s8 offset-s2">
+       <div class="row">
+           <form id="searchForm" class="col s12">
+<div class="row">
+  <div class="col s6">
+               <div class="input-field col s12" required>
+                 <select id='city' required>
+                   <option value="" disabled selected>Choose your option</option>
+                   <option value="Delhi">Delhi</option>
+                   <option value="Kolkata">Kolkata</option>
+                   <option value="Chennai">Chennai</option>
+                   <option value="Faridabad">Faridabad </option>
+                   <option value="Gurgaon">Gurgaon</option>
+                   <option value="Noida">Noida</option>
+                   <option value="Ghaziabad">Ghaziabad</option>
+                   <option value="Agartala">Agartala</option>
+                   <option value="Aizwal">Aizwal</option>
+                   <option value="Ambala">Ambala</option>
+                   <option value="Bangalore">Bangalore</option>
+                   <option value="Bhopal">Bhopal</option>
+                   <option value="Bhubaneswar">Bhubaneswar</option>
+                   <option value="Chandigarh">Chandigarh</option>
+                   <option value="Dehradun">Dehradun</option>
+                   <option value="Gandhinagar">Gandhinagar</option>
+                   <option value="Gangtok">Gangtok</option>
+                   <option value="Guwahati">Guwahati</option>
+                   <option value="Gyderabad">Hyderabad</option>
+                   <option value="Imphal">Imphal</option>
+                   <option value="Itanagar">Itanagar</option>
+                   <option value="Jaipur">Jaipur</option>
+                   <option value="Jammu">Jammu</option>
+                   <option value="Jullunder">Kohima</option>
+                   <option value="Lucknow">Lucknow</option>
+                   <option value="Panjim">Panjim</option>
+                   <option value="Patna">Patna</option>
+                   <option value="Pondicherry">Pondicherry</option>
+                   <option value="Port Blair">Port Blair</option>
+                   <option value="Raipur">Raipur</option>
+                   <option value="Ranchi">Ranchi</option>
+                   <option value="Shillong">Shillong</option>
+                   <option value="Shimla">Shimla</option>
+                   <option value="Srinagar">Srinagar</option>
+                   <option value="Trivandrum">Trivandrum</option>
+                   <option value="Silvasa">Silvasa</option>
+                   <option value="Daman">Daman and Diu</option>
+
+                 </select>
+                 <label>Select City</label>
+               </div>
+
+</div>
+<div class="col s6">
+
+  <p>
+      <input class="with-gap" name="group1" type="radio" id="pet" required  />
+      <label for="pet">Petrol</label>
+    </p>
+    <p>
+      <input class="with-gap" name="group1" type="radio" id="die" required />
+      <label for="die">Diesel</label>
+    </p>
+
+</div>
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons left">send</i>
+  </button>
+
+           </form>
+<br><br>
+<div id="format"></div>
+
+  <div class="card">
+    <div class="card-content">
+      <p><h4><div id="type"></div></h4></p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test4">Price</a></li>
+
+
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div id="test4"></div>
+
+    </div>
+  </div>
+ </div>
+       </div>
+       </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+<footer class="page-footer">
+<div class="container">
+           <div class="row">
+             <div class="col l6 s12">
+               <h5 class="white-text"> Contact Us:</h5>
+               <p class="grey-text text-lighten-4">7404442229
+             </div>
+             <div class="col l4 offset-l2 s12">
+               <h5 class="white-text">Follow me on:</h5>
+               <ul>
+                 <li><a class="grey-text text-lighten-3" href="https://www.github.com/shubhamdhingraa">Github</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://linkedin.com/in/shubham-dhingra">LinkedIn</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://www.twitter.com/iamshubamm">Twitter</a></li>
+                 <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/iamsid.__">Instagram</a></li>
+               </ul>
+             </div>
+           </div>
+         </div>
+
+         <div class="footer-copyright">
+           <div class="container">
+             <a href="http://www.iamsid.cf"><div class="chip">
+               Shubham Dhingra
+                 <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAApBAAAAJDRmYzY1YTExLWYzNDctNDQ3NC05YjkwLWZhYTA3YmJhMzU4Nw.jpg" alt="Contact Person">
+
+               </div></a>
+           © 2017 WebApp built by <a href="http://www.iamsid.cf" target="_blank">Shubham Dhingra</a>
+           <a class="grey-text text-lighten-4 right" target="_blank" href="https://www.github.com/shubhamdhingraa">Github</a>
+           </div>
+         </div>
+       </footer>
+
+          <script>
+               $(document).ready(function() {
+                 $('select').material_select();
+               });
+
+          </script>
+
+</body>
+</html>
